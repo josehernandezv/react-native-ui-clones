@@ -10,6 +10,7 @@
         "eject": "expo eject"
     },
     "dependencies": {
+        "@react-navigation/bottom-tabs": "^6.2.0",
         "@react-navigation/native": "^6.0.8",
         "@react-navigation/native-stack": "^6.5.2",
         "expo": "~44.0.0",
@@ -23,6 +24,7 @@
     },
     "devDependencies": {
         "@babel/core": "^7.12.9",
+        "@faker-js/faker": "^6.0.0",
         "@types/react": "~17.0.21",
         "@types/react-native": "~0.64.12",
         "@typescript-eslint/eslint-plugin": "^5.16.0",
