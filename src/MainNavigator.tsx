@@ -21,6 +21,7 @@ export default function MainNavigator() {
             screenOptions={{
                 headerShown: false,
             }}
+            initialRouteName="Facebook"
         >
             <Stack.Screen
                 name="Home"
