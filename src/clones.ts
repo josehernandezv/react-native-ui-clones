@@ -17,4 +17,10 @@ export const clones: Clone[] = [
         color: '#1778F2',
         screen: 'Facebook',
     },
+    {
+        name: 'Pinterest',
+        icon: 'pinterest-with-circle',
+        color: '#E60023',
+        screen: 'Pinterest',
+    },
 ];

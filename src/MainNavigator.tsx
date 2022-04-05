@@ -5,10 +5,12 @@ import {
 
 import Facebook from './Facebook';
 import HomeScreen from './HomeScreen';
+import Pinterest from './Pinterest';
 
 export type StackParamList = {
     Home: undefined;
     Facebook: undefined;
+    Pinterest: undefined;
 };
 
 const Stack = createNativeStackNavigator<StackParamList>();
@@ -21,7 +23,7 @@ export default function MainNavigator() {
             screenOptions={{
                 headerShown: false,
             }}
-            initialRouteName="Facebook"
+            // initialRouteName="Facebook"
         >
             <Stack.Screen
                 name="Home"
@@ -32,6 +34,7 @@ export default function MainNavigator() {
                 }}
             />
             <Stack.Screen component={Facebook} name="Facebook" />
+            <Stack.Screen component={Pinterest} name="Pinterest" />
         </Stack.Navigator>
     );
 }
