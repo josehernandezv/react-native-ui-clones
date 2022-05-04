@@ -23,7 +23,7 @@ export default function MainNavigator() {
             screenOptions={{
                 headerShown: false,
             }}
-            initialRouteName="Pinterest"
+            initialRouteName="Home"
         >
             <Stack.Screen
                 name="Home"
