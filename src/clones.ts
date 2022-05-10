@@ -23,4 +23,10 @@ export const clones: Clone[] = [
         color: '#E60023',
         screen: 'Pinterest',
     },
+    {
+        name: 'Spotify',
+        icon: 'spotify',
+        color: '#1DB954',
+        screen: 'Spotify',
+    },
 ];
