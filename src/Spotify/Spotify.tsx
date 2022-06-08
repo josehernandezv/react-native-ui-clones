@@ -1,17 +1,78 @@
-import { StyleSheet, Text, View } from 'react-native';
+import Icon from '@expo/vector-icons/MaterialCommunityIcons';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { StatusBar } from 'expo-status-bar';
+import type { ComponentProps, ComponentType } from 'react';
+
+import Home from './Home';
+import Library from './Library';
+import Search from './Search';
+import { black, lightGray, white } from './constants';
+
+const Tab = createBottomTabNavigator();
+
+const screens: {
+    component: ComponentType<any>;
+    name: string;
+    iconFocused: ComponentProps<typeof Icon>['name'];
+    icon: ComponentProps<typeof Icon>['name'];
+}[] = [
+    {
+        component: Home,
+        name: 'Home',
+        iconFocused: 'home-variant',
+        icon: 'home-variant-outline',
+    },
+    {
+        component: Search,
+        name: 'Search',
+        iconFocused: 'magnify',
+        icon: 'magnify',
+    },
+    {
+        name: 'Your Library',
+        component: Library,
+        icon: 'playlist-music-outline',
+        iconFocused: 'playlist-music',
+    },
+];
 
 export default function Spotify() {
     return (
-        <View style={styles.container}>
-            <Text>Work In Progress 🚧</Text>
-        </View>
+        <>
+            <StatusBar style="light" />
+            <Tab.Navigator
+                screenOptions={{
+                    tabBarActiveTintColor: white,
+                    tabBarInactiveTintColor: lightGray,
+                    tabBarStyle: {
+                        backgroundColor: 'rgba(18, 18, 18, 0.8)',
+                        borderTopWidth: 0,
+                        position: 'absolute',
+                    },
+                    headerShown: false,
+                }}
+                sceneContainerStyle={{ backgroundColor: black }}
+            >
+                {screens.map(({ component, name, iconFocused, icon }) => (
+                    <Tab.Screen
+                        key={name}
+                        name={name}
+                        component={component}
+                        options={{
+                            tabBarIcon: ({ focused, color, size }) => {
+                                const iconName = focused ? iconFocused : icon;
+                                return (
+                                    <Icon
+                                        name={iconName}
+                                        size={size}
+                                        color={color}
+                                    />
+                                );
+                            },
+                        }}
+                    />
+                ))}
+            </Tab.Navigator>
+        </>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-});

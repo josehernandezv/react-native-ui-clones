@@ -66,7 +66,7 @@ function getRandomReactions(): ImageSourcePropType[] {
     const reactionsCount = faker.datatype.number({ min: 1, max: 3 });
     const reactions: ImageSourcePropType[] = [];
     for (let i = 0; i < reactionsCount; i++) {
-        const reaction = faker.random.arrayElement(reactionsSources);
+        const reaction = faker.helpers.arrayElement(reactionsSources);
         if (!reactions.includes(reaction)) {
             reactions.push(reaction);
         }
