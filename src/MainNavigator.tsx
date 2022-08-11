@@ -25,7 +25,7 @@ export default function MainNavigator() {
             screenOptions={{
                 headerShown: false,
             }}
-            initialRouteName="Spotify"
+            initialRouteName="Home"
         >
             <Stack.Screen
                 name="Home"
